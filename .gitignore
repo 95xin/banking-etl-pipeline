@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Virtual environments
+.env
+.venv
+venv/
+ENV/
+
+# Config files (敏感信息不要上传)
+utils/constants.py
+*.conf
+*.ini
+*.env
+
+# Logs
+logs/
+*.log
+
+# Data files
+*.csv
+*.parquet
+
+# Airflow
+airflow/logs/
