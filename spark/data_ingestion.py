@@ -5,7 +5,7 @@ import boto3
 import pandas as pd
 from sqlalchemy import create_engine
 
-# 确保能 import 到 utils.constants（建议从项目根目录用: python -m spark.data_ingestion）
+# 确保能 import 到 utils.constants
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 
@@ -14,7 +14,7 @@ from utils.constants import (
     PG_HOST, PG_PORT, PG_DB, PG_USER, PG_PASSWORD
 )
 
-BASE_PREFIX = "Business_raw_data/"          # 桶内前缀（不要重复写 bucket 名）
+BASE_PREFIX = "Business_raw_data/"         
 FILES = ["customers.csv", "accounts.csv", "transactions.csv"]
 TABLES = {"customers.csv":"customers", "accounts.csv":"accounts", "transactions.csv":"transactions"}
 
@@ -36,7 +36,7 @@ def main():
     )
     engine = get_engine()
 
-    # 按父→子顺序写入，避免外键顺序问题（即使没外键，这个顺序也更自然）
+    
     ordered = ["customers.csv", "accounts.csv", "transactions.csv"]
 
     for fname in ordered:
