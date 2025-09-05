@@ -12,8 +12,7 @@ __pycache__/
 venv/
 ENV/
 
-# Config files (敏感信息不要上传)
-utils/constants.py
+# Config files 
 *.conf
 *.ini
 *.env
